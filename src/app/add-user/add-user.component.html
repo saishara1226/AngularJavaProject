@@ -1,0 +1,90 @@
+<div class="container">
+    <h3>Create User Page</h3>
+    <form [formGroup]="_userFormGroup">
+`        <div class="row">
+            <div class="form-group col-md-4 col-md-offset-3">
+                <label for="userId"> UserId:<span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="userId" required>
+                <span class="text-danger" *ngIf="_userFormGroup.get('userId').hasError('required')">UserId is required
+                </span>
+
+            </div>
+
+            <div class="form-group col-md-4 col-md-offset-3">
+                <label for="pwd"> Password:<span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="pwd" required type="password">
+                <span class="text-danger" *ngIf="_userFormGroup.get('userId').hasError('required')">Password is required
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+            <div class="form-group col-md-4 ">
+                <label for="firstName"> First Name: <span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="firstName" required>
+                <span class="text-danger"> first name is required</span>
+
+
+
+            </div>
+
+            <div class="form-group col-md-4 ">
+                <label for="lastName"> Last Name: <span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="lastName" required>
+                <span class="text-danger"> Last name is required</span>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4 col-md-offset-3">
+                <label for="email"> Email:<span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="email" required>
+                <span class="text-danger">Email is required</span>
+
+            </div>
+
+            <div class="form-group col-md-4 col-md-offset-3">
+                <label for="phno"> Phone Number:<span class="text-danger">*</span></label>
+                <input text class="form-control" formControlName="phno" required>
+                <span class="text-danger">Phone number is required</span>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4 col-md-offset-3">
+                <label for="address"> Address:</label>
+                <input text class="form-control" formControlName="address" required>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-2">
+                <button [disabled]="!_userFormGroup.valid" class="btn btn-success">Save</button>
+
+            </div>
+
+            <div class="form-group col-md-10">
+
+                <button class="btn btn-danger" type="reset"> reset</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
